@@ -1,0 +1,10 @@
+Interface: en0, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.1.1	00:25:9c:c8:9a:88	Cisco-Linksys, LLC
+192.168.1.109	6c:72:e7:cf:64:67	(Unknown)
+192.168.1.122	78:31:c1:c5:a9:b0	(Unknown)
+192.168.1.148	e8:8d:28:c5:65:19	Apple
+192.168.1.149	74:da:38:8f:79:59	(Unknown)
+
+522 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.9: 256 hosts scanned in 1.902 seconds (134.60 hosts/sec). 5 responded

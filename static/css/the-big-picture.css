@@ -1,0 +1,34 @@
+/*!
+ * Start Bootstrap - The Big Picture (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+body {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	background: none;
+}
+
+.full {
+  background: url(' http://www.zeroflux.org/proj/htpc/darkwood.jpg') no-repeat center top;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 1000px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+
+   
