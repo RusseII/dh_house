@@ -18,7 +18,8 @@ def roommates():
 
 @app.route('/scan', methods=['GET'])
 def ping_who_is_here():
-    all_info.show_who_is_home()
+    all_info.scan_and_counter()
+    return all_info.show_who_is_home()
 
 
 if __name__ == "__main__":
