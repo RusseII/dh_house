@@ -7,8 +7,7 @@ from flask import Flask, request, redirect, url_for, render_template, send_from_
 app = Flask(__name__)
 
 # resume
-
-
+all_info = findRoommates()
 
 
 # roomate network_scan
@@ -18,8 +17,8 @@ def roommates():
 
 
 @app.route('/scan', methods=['GET'])
-def scan():
-    return findRoommates().find_roommates()
+def ping_who_is_here():
+    all_info.show_who_is_home()
 
 
 if __name__ == "__main__":
