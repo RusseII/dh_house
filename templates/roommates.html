@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html class="full" lang="en">
-<!-- Make sure the <html> tag is set to the .full CSS class. Change the background image in the full.css file. -->
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Who is Home??    </title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
 
-    <!-- Bootstrap Core CSS -->
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <title>DeepHire House</title>
+</head>
 
-    <!-- Custom CSS -->
-    <link href="../static/css/the-big-picture.css" rel="stylesheet">
+<body onload="request_scan();">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-    </head>
-
-    <body onload="get_info();">
-
-        <!-- Navigation -->
-
-        <div class="row">
-
-            <div class="col-xs-2 col-md-5">
-            </div>
-            <div class="col-xs-8 col-md-2" id="1">
-            </div>
-            <div class="col-md-5 col-xs-2">
+    <header>
+        <h1>DeepHire House</h1>
+    </header>
+    
+    <main>
+        
+        <div id="who-is-home" class="info-card">
+            <h2>Who's home?</h2>
+            <button class="small-link" onclick="request_scan()">Refresh</button>
+            <div class="info-card-content">
+                <ul>
+                    <li id="russell-home">Russell</li>
+                    <li id="steve-home">Steve</li>
+                    <li id="nick-home">Nick</li>
+                </ul>
             </div>
         </div>
+    </main>
 
+    <!-- Navigation -->
 
+    <div class="row">
 
-        <div class="row">
-
-            <div class="col-xs-2 col-md-5">
-            </div>
-            <div class="col-xs-8 col-md-2" id="2">
-            </div>
-            <div class="col-xs-2 col-md-5">
-            </div>
+        <div class="col-xs-2 col-md-5">
         </div>
-
-
-
-
-        <div class="row">
-
-            <div class="col-xs-2 col-md-5">
-            </div>
-            <div class="col-md-2 col-xs-8" id="3">
-            </div>
-            <div class="col-xs-2 col-md-5">
-            </div>
+        <div class="col-xs-8 col-md-2" id="1">
         </div>
-
-
-        <div class="row">
-
-            <div class="col-xs-2 col-md-5">
-            </div>
-            <div class="col-md-2 col-xs-8" id="5">
-            </div>
-            <div class="col-xs-2 col-md-5">
-            </div>
+        <div class="col-md-5 col-xs-2">
         </div>
+    </div>
 
 
-        <!-- Page Content -->
+
+    <div class="row">
+
+        <div class="col-xs-2 col-md-5">
+        </div>
+        <div class="col-xs-8 col-md-2" id="2">
+        </div>
+        <div class="col-xs-2 col-md-5">
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+
+        <div class="col-xs-2 col-md-5">
+        </div>
+        <div class="col-md-2 col-xs-8" id="3">
+        </div>
+        <div class="col-xs-2 col-md-5">
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-2 col-md-5">
+        </div>
+        <div class="col-md-2 col-xs-8" id="5">
+        </div>
+        <div class="col-xs-2 col-md-5">
+        </div>
+    </div>
+
+
+    <!-- Page Content -->
     <!--<div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-12">
@@ -90,68 +95,7 @@
     <!-- /.row -->
 
     <!-- /.container -->
-
-    <!-- jQuery -->
-    <script>function get_info()
-        {
-            $.get( "/scan", function( data ) {
-                var json = JSON.parse(data);
-
-
-                console.log(json);
-        //console.log(json.rooms[3])
-        var Roos_is_home=(json[0].room);
-        var AJ_is_home=(json[1].room);
-        var Orion_is_home=(json[2].room);
-        var Grace_is_home=(json[3].room);
-
-        var Russell = document.getElementById("1");
-        var Andrew=document.getElementById("2");
-        var Orion=document.getElementById("3");
-        var Grace=document.getElementById("5");
-        Andrew.setAttribute('class',"bg-primary col-md-2 col-xs-8 text-center");
-        Orion.setAttribute('class',"bg-primary col-md-2 col-xs-8 text-center");
-        Russell.setAttribute('class',"bg-primary col-md-2 col-xs-8 text-center");
-        Grace.setAttribute('class',"bg-primary col-md-2 col-xs-8 text-center");
-        if (Roos_is_home.indexOf('not')>0)
-        {
-            Russell.setAttribute('class',"bg-danger col-md-2 col-xs-8 text-center");
-        }
-
-        if (AJ_is_home.indexOf('not')>0)
-        {
-            Andrew.setAttribute('class',"bg-danger col-md-2 col-xs-8 text-center");
-        }
-
-        if (Orion_is_home.indexOf('not')>0)
-        {
-            Orion.setAttribute('class',"bg-danger col-md-2 col-xs-8 text-center");
-        }
-
-        if (Grace_is_home.indexOf('not')>0)
-        {
-            Grace.setAttribute('class',"bg-danger col-md-2 col-xs-8 text-center");
-        }
-
-
-        Russell.innerHTML = Roos_is_home;
-        Andrew.innerHTML=AJ_is_home;
-        Orion.innerHTML=Orion_is_home;
-//Grace.innerHTML=Grace_is_home; 
-
-
-
-
-
-        //alert( "Load was performed." );
-    });
-            setTimeout(get_info, 10000);
-        }
-    </script>
-    <script src="../static/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
 
 </body>
 

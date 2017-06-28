@@ -1,0 +1,98 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: linear-gradient(to top, #FAFAFA, #FFF);
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+
+	overflow: hidden;
+}
+
+h1 {
+	font-family: Helvetica, sans-serif;
+	font-weight: 300;
+	text-align: center;
+	margin: 10px auto;
+}
+
+a {
+	color: #42B0C0;
+}
+
+a:hover, a:visited {
+	color: #206168;
+}
+
+main {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	max-width: 1040px;
+}
+
+.info-card {
+	width: 100%;
+	max-width: 510px;
+}
+
+.info-card h2 {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.small-link {
+	border: none;
+	background: none;
+
+	color: #42B0C0;
+	cursor: pointer;
+	outline: none;
+}
+
+.small-link:visited {
+	color: #42B0C0;
+}
+
+.small-link:hover {
+	color: #42B0C0;
+	text-decoration: underline;
+}
+
+.info-card-content {
+	border: 1px solid #DDD;
+	border-radius: 2px;
+	background-color: #FFF;
+	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+}
+
+#who-is-home ul {
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+}
+
+#who-is-home ul li {
+	margin: 0;
+	padding: 10px 20px;
+}
+
+#who-is-home ul li:not(:last-child) {
+	border-bottom: 1px solid #EEE;
+}
+
+#who-is-home ul li.home {
+	background-color: #48CF8F;
+}
+
+#who-is-home ul li.away {
+	background-color: #CF5948;
+}

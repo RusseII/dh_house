@@ -19,7 +19,6 @@ def roommates():
 
 @app.route('/scan', methods=['GET'])
 def scan():
-
     return findRoommates().find_roommates()
 
 
