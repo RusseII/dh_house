@@ -31,7 +31,7 @@ function updateDOM(json) {
     Steve.innerHTML=Steve_is_home;
     Nick.innerHTML=Nick_is_home;
 
-    setTimeout(request_scan, 10000);
+    setTimeout(request_scan, 30000);
 }
 
 function request_scan() {
