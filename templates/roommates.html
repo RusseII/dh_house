@@ -31,77 +31,16 @@
                     <li id="nick-home">Nick</li>
                 </ul>
 
-                <div class="error-overlay hidden">
-                    <h3>Sorry!</h3>
-                    <h4>Something's not right.</h4>
-                    <button class="small-link" onclick="request_scan()">Refresh</button>
+                <div class="overlay hidden">
+                    <h3 class="overlay-title">Loading...</h3>
+                    <h4 class="overlay-message">Just a moment please.</h4>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Navigation -->
-
-    <div class="row">
-
-        <div class="col-xs-2 col-md-5">
-        </div>
-        <div class="col-xs-8 col-md-2" id="1">
-        </div>
-        <div class="col-md-5 col-xs-2">
-        </div>
-    </div>
-
-
-
-    <div class="row">
-
-        <div class="col-xs-2 col-md-5">
-        </div>
-        <div class="col-xs-8 col-md-2" id="2">
-        </div>
-        <div class="col-xs-2 col-md-5">
-        </div>
-    </div>
-
-
-
-
-    <div class="row">
-
-        <div class="col-xs-2 col-md-5">
-        </div>
-        <div class="col-md-2 col-xs-8" id="3">
-        </div>
-        <div class="col-xs-2 col-md-5">
-        </div>
-    </div>
-
-
-    <div class="row">
-
-        <div class="col-xs-2 col-md-5">
-        </div>
-        <div class="col-md-2 col-xs-8" id="5">
-        </div>
-        <div class="col-xs-2 col-md-5">
-        </div>
-    </div>
-
-
-    <!-- Page Content -->
-    <!--<div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <h1>The Big Picture</h1>
-                <p>Russell Status</p>
-            </div>
-        </div>
-    </div> -->
-    <!-- /.row -->
-
-    <!-- /.container -->
-    <script src="../static/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
+    <script src="../static/js/whoIsHome.js"></script>
 
 </body>
 
