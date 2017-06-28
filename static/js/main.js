@@ -44,6 +44,9 @@ function request_scan() {
             var data = JSON.parse(this.response);
             console.log(data);
             updateDOM(data);
+
+            var el = document.querySelector("#who-is-home .error-overlay");
+            el.classList.add("hidden");
         } else {
             // We reached our target server, but it returned an error
 
@@ -51,7 +54,9 @@ function request_scan() {
     };
 
     request.onerror = function() {
-    // There was a connection error of some sort
+        // There was a connection error of some sort
+        var el = document.querySelector("#who-is-home .error-overlay");
+        el.classList.remove("hidden");
     };
 
     request.send();

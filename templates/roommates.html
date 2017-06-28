@@ -16,7 +16,7 @@
 <body onload="request_scan();">
 
     <header>
-        <h1>DeepHire House</h1>
+        <h1>DeepHire 🏡</h1>
     </header>
     
     <main>
@@ -30,6 +30,12 @@
                     <li id="steve-home">Steve</li>
                     <li id="nick-home">Nick</li>
                 </ul>
+
+                <div class="error-overlay hidden">
+                    <h3>Sorry!</h3>
+                    <h4>Something's not right.</h4>
+                    <button class="small-link" onclick="request_scan()">Refresh</button>
+                </div>
             </div>
         </div>
     </main>
