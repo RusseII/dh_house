@@ -60,6 +60,7 @@ class findRoommates():
             self.Roos = "Roos is NOT home"
         if self.steve_counter == 0:
             self.Steve = "Steve is NOT home"
+        return "DONE"
 
             # 8:31:c1:c5:a9:b0 nicks laptop
 
@@ -84,7 +85,6 @@ class findRoommates():
             {"room": self.Grace, }
         ]
         print(self.nick_counter)
-        return self.who_is_home
         names = json.dumps(self.who_is_home)
 
         return names
