@@ -37,6 +37,8 @@ main {
 	justify-content: space-around;
 	width: 100%;
 	max-width: 1040px;
+
+	padding: 0 10px;
 }
 
 .info-card {
@@ -94,5 +96,6 @@ main {
 }
 
 #who-is-home ul li.away {
-	background-color: #CF5948;
+	color: #AAA;
+	background-color: #EEE;
 }

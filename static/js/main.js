@@ -1,4 +1,4 @@
-function updateDOM() {
+function updateDOM(json) {
     var Roos_is_home=(json[0].room);
     var Steve_is_home=(json[1].room);
     var Nick_is_home=(json[2].room);
@@ -28,7 +28,7 @@ function updateDOM() {
 
 
     Russell.innerHTML = Roos_is_home;
-    Steven.innerHTML=Steve_is_home;
+    Steve.innerHTML=Steve_is_home;
     Nick.innerHTML=Nick_is_home;
 
     setTimeout(request_scan, 10000);

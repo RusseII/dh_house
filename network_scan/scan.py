@@ -11,7 +11,7 @@ class findRoommates():
     def find_roommates(self):
         Roos = "Russell is not home"
         Grace = "Grace is not in my appartment"
-        Steve = "Steve is not Home"
+        Steve = "Steve is not home"
         Nick = "Nick is not home"
         passw = os.environ['PI_PASS']
         subprocess.call(
