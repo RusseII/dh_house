@@ -21,7 +21,7 @@ h1 {
 	font-family: Helvetica, sans-serif;
 	font-weight: 300;
 	text-align: center;
-	margin: 10px auto;
+	margin: 20px auto 0;
 }
 
 a {
@@ -78,7 +78,7 @@ main {
 	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
 }
 
-.error-overlay {
+.overlay {
 	position: absolute;
 	top: 0; left: 0;
 	width: 100%;
@@ -95,11 +95,11 @@ main {
 	justify-content: center;
 }
 
-.error-overlay.hidden {
+.overlay.hidden {
 	display: none;
 }
 
-.error-overlay h3, .error-overlay h4 {
+.overlay-title, .overlay-message {
 	margin: 5px auto;	
 }
 

@@ -43,6 +43,7 @@ class findRoommates():
           
 
 
+<<<<<<< HEAD
         if '78:4f:43:4e:5f:67' in open('allout.txt').read():
             if self.steve_counter < counter_celing:
                 self.steve_counter += counter_celing
@@ -50,6 +51,10 @@ class findRoommates():
         else:
             if self.steve_counter > 0:
                 self.steve_counter -= 1
+=======
+        if 'ac:cf:85:12:42:1d' in open('allout.txt').read():
+            Steve = "Steve is home"
+>>>>>>> 1bf047e7a6dfae587114f35b05bbb6cb43ba6ec7
 
         if '6c:72:e7:cf:64:67' in open('allout.txt').read():
             if self.nick_counter < counter_celing:
