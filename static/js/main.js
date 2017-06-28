@@ -1,6 +1,6 @@
 function toggleTheme() {
 	var el = document.body;
-	var className = "dark-theme";
+	var className = "light-theme";
 	if (el.classList) {
 		el.classList.toggle(className);
 	} else {
@@ -14,4 +14,16 @@ function toggleTheme() {
 
 		el.className = classes.join(' ');
 	}
+}
+
+function checkTime() {
+	var d = new Date(); // for now
+	var hour = d.getHours(); // => 9
+
+	if (hour <= 20 || hour >= 7) {
+		toggleTheme();
+		console.log("Day Time!");
+	}
+
+	setTimeout(checkTime(), 600000);
 }
