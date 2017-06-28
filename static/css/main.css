@@ -137,8 +137,13 @@ main {
 
 	border: 1px solid #DDD;
 	border-radius: 2px;
-	background-color: #FFF;
+	background-color: #222;
 	box-shadow: 0 3px 6px 0 rgba(0,0,0,0.16);
+	transition: all 0.5s ease;
+}
+
+body.light-theme .info-card-content {
+	background-color: #FFF;
 }
 
 .overlay {
@@ -175,6 +180,8 @@ main {
 #who-is-home ul li {
 	margin: 0;
 	padding: 10px 20px;
+
+	transition: all 0.5s ease;
 }
 
 #who-is-home ul li:not(:last-child) {
@@ -183,9 +190,15 @@ main {
 
 #who-is-home ul li.home {
 	background-color: #48CF8F;
+	color: #000;
+}
+
+body.light-theme #who-is-home ul li.away {
+	color: #AAA;
+	background-color: #EEE;
 }
 
 #who-is-home ul li.away {
 	color: #AAA;
-	background-color: #EEE;
+	background-color: #111;
 }

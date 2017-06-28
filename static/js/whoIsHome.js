@@ -41,17 +41,17 @@ function updateDOM(json) {
     Steve.setAttribute('class',"home");
     Nick.setAttribute('class',"home");
 
-    if (Roos_is_home.indexOf('not')>0)
+    if (Roos_is_home.indexOf('NOT')>0)
     {
         Russell.setAttribute('class',"away");
     }
 
-    if (Steve_is_home.indexOf('not')>0)
+    if (Steve_is_home.indexOf('NOT')>0)
     {
         Steve.setAttribute('class',"away");
     }
 
-    if (Nick_is_home.indexOf('not')>0)
+    if (Nick_is_home.indexOf('NOT')>0)
     {
         Nick.setAttribute('class',"away");
     }
