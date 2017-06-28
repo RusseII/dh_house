@@ -11,17 +11,62 @@ html, body {
 }
 
 body {
+	position: relative;
 	background: linear-gradient(to top, #FAFAFA, #FFF);
 	font-family: 'Helvetica Neue', Helvetica, sans-serif;
 
 	overflow: hidden;
+
+	transition: color 1s ease;
 }
 
-h1 {
+body:before {
+	content: '';
+	position: absolute;
+	top: 0; left: 0; right: 0; bottom: 0;
+	opacity: 0;
+	background: linear-gradient(to top, #323232, #000);
+
+	transition: opacity 1s ease;
+
+	z-index: 0;
+}
+
+body.dark-theme {
+	color: #FAFAFA;
+}
+
+body.dark-theme:before {
+	opacity: 1;
+}
+
+header {
+	position: relative;
+	padding: 20px 0;
+}
+
+header h1 {
 	font-family: Helvetica, sans-serif;
 	font-weight: 300;
 	text-align: center;
-	margin: 20px auto 0;
+	margin: 0;
+}
+
+#settings {
+	position: absolute;
+	top: 0; right: 0;
+	padding: 10px;
+}
+
+#settings .fa {
+	font-size: 1.5rem;
+	padding: 10px;
+	color: #42B0C0;
+	cursor: pointer;
+}
+
+#settings .fa:hover {
+	color: #206168;
 }
 
 a {
@@ -37,13 +82,15 @@ main {
 	justify-content: space-around;
 	width: 100%;
 	max-width: 1040px;
-
+	margin: 0 auto;
 	padding: 0 10px;
 }
 
 .info-card {
 	width: 100%;
 	max-width: 500px;
+
+	z-index: 10;
 }
 
 .info-card h2 {
@@ -58,6 +105,7 @@ main {
 	color: #42B0C0;
 	cursor: pointer;
 	outline: none;
+	align-self: flex-end;
 }
 
 .small-link:visited {
@@ -67,6 +115,21 @@ main {
 .small-link:hover {
 	color: #42B0C0;
 	text-decoration: underline;
+}
+
+.info-card-header {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+
+	margin-bottom: 5px;
+}
+
+.info-card-header h2 {
+	width: 100%;
+	align-self: flex-start;
+
+	margin-bottom: 0;
 }
 
 .info-card-content {

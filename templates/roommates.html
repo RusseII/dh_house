@@ -9,6 +9,7 @@
     <meta name="author" content="">
 
     <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <script src="https://use.fontawesome.com/cafb61558f.js"></script>
 
     <title>DeepHire House</title>
 </head>
@@ -17,13 +18,18 @@
 
     <header>
         <h1>DeepHire 🏡</h1>
+        <div id="settings">
+            <i class="fa fa-lightbulb-o" aria-hidden="true" onclick="toggleTheme()"></i>
+        </div>
     </header>
     
     <main>
         
         <div id="who-is-home" class="info-card">
-            <h2>Who's home?</h2>
-            <button class="small-link" onclick="request_scan()">Refresh</button>
+            <div class="info-card-header">
+                <h2>Who's home?</h2>
+                <button class="small-link" onclick="request_scan()">Refresh</button>
+            </div>
             <div class="info-card-content">
                 <ul>
                     <li id="russell-home">Russell</li>
@@ -40,7 +46,9 @@
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
+    <script src="../static/js/main.js"></script>
     <script src="../static/js/whoIsHome.js"></script>
+    <script src="../static/js/shoppingList.js"></script>
 
 </body>
 
