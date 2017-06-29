@@ -16,14 +16,7 @@ class findRoommates():
         self.steve_counter = 0
         self.nick_counter = 0
         self.passw = os.environ['PI_PASS']
-        self.who_is_home = {
-            "Roos": self.Roos,
-         
-            "Steve": self.Steve,
-        
-            "Nick": self.Nick,
-            "Grace": self.Grace,
-        }
+        self.who_is_home = "test"
 
     def scan_and_counter(self):
 
@@ -36,13 +29,12 @@ class findRoommates():
         if 'e8:8d:28:c5:65:19' in open('allout.txt').read():
             if self.roos_counter < counter_celing:
                 self.roos_counter += counter_celing
-                print("WW")
                 self.Roos = "True"
         else:
             if self.roos_counter > 0:
                 self.roos_counter -= 1
 
-        if '78:4f:43:4e:5f:67' in open('allout.txt').read():
+        if 'ac:cf:85:12:42:1d' in open('allout.txt').read():
             if self.steve_counter < counter_celing:
                 self.steve_counter += counter_celing
                 self.Steve = "True"
@@ -91,15 +83,15 @@ class findRoommates():
         }, {
             "Grace": self.Grace,
         }
-        print(self.nick_counter)
-        names = json.dumps(self.who_is_home)
+        # names = json.dumps(self.who_is_home)
 
-        return names
+        # return names
 
     def is_there_event_and_scan(self):
         self.scan_and_counter()
-        if (
-        self.who_is_home == {
+        print(json.dumps(self.who_is_home))
+
+        l = {
             "Roos": self.Roos,
         }, {
             "Steve": self.Steve,
@@ -108,14 +100,16 @@ class findRoommates():
         }, {
             "Grace": self.Grace,
         }
-):
+
+        if (self.who_is_home == l):
             return False
         else:
+            self.who_is_home = l
             return True
 
 
 if __name__ == '__main__':
     test = findRoommates()
-    for i in range(20):
+    for i in range(20000):
         print(test.is_there_event_and_scan())
         print(test.show_who_is_home())

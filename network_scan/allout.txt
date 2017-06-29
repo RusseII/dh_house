@@ -1,5 +1,0 @@
-Interface: en0, datalink type: EN10MB (Ethernet)
-Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-
-523 packets received by filter, 0 packets dropped by kernel
-Ending arp-scan 1.9: 256 hosts scanned in 1.919 seconds (133.40 hosts/sec). 0 responded

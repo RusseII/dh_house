@@ -1,9 +1,14 @@
-from network_scan.engine import Engine_network_scan
 from network_scan.scan import findRoommates
 from flask import Flask, flash, request, redirect, url_for, render_template
 
 from flask_socketio import SocketIO, send, emit, join_room, leave_room, \
     Namespace
+import threading
+
+
+from threading import Timer, Thread, Event
+from time import sleep
+import time
 
 async_mode = None
 
@@ -24,14 +29,19 @@ def roommates():
 @app.route('/scan', methods=['GET'])
 def ping_who_is_here():
     all_info.scan_and_counter()
-    push_event()
     return all_info.show_who_is_home()
 
 
 def push_event():
-	socketio.emit('house_occupants_updated', all_info.who_is_home)
-	print(all_info.who_is_home)
 
+    if all_info.is_there_event_and_scan():
+        socketio.emit('house_occupants_updated', all_info.who_is_home)
+
+    print(all_info.who_is_home)
+    threading.Timer(30, push_event).start()
+
+
+push_event()
 
 
 if __name__ == "__main__":
