@@ -68,6 +68,7 @@ function updateDOM(json) {
 }
 
 function request_scan() {
+    show_error("Loading...", "Just a moment please.");
     //socket.emit('request_scan');
     var request = new XMLHttpRequest();
     request.open('GET', '/scan', true);
