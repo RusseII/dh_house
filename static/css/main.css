@@ -233,7 +233,7 @@ body.light-theme #who-is-home ul li.away {
 	width: 100%;
 	text-align: center;
 	margin: 0;
-	padding-bottom: 15px;
+	padding: 0 10px 15px;
 	font-weight: 300;
 }
 
