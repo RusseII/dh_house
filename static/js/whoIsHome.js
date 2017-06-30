@@ -28,66 +28,69 @@ socket.on('error', function() {
 
 function updateDOM(json) {
     hide_error();
-
-    var Roos_is_home=(json[0].room);
-    var Steve_is_home=(json[1].room);
-    var Nick_is_home=(json[2].room);
+    console.log(json);
+    var Roos_is_home=(true);
+    var Steve_is_home=(true);
+    var Nick_is_home=(false);
 
     var Russell = document.getElementById("russell-home");
     var Steve = document.getElementById("steve-home");
     var Nick = document.getElementById("nick-home");
 
-    Russell.setAttribute('class',"home");
-    Steve.setAttribute('class',"home");
-    Nick.setAttribute('class',"home");
-
-    if (Roos_is_home.indexOf('NOT')>0)
+    if (Roos_is_home)
     {
+        Russell.setAttribute('class',"home");
+        Russell.inneHTML = 'Roos is home';
+    } else {
         Russell.setAttribute('class',"away");
+        Russell.inneHTML = 'Roos is not home';
     }
 
-    if (Steve_is_home.indexOf('NOT')>0)
+    if (Steve_is_home)
     {
+        Steve.setAttribute('class',"home");
+        Steve.inneHTML = 'Steve is home';
+    } else {
         Steve.setAttribute('class',"away");
+        Steve.inneHTML = 'Steve is not home';
     }
 
-    if (Nick_is_home.indexOf('NOT')>0)
+    if (Nick_is_home)
     {
+        Nick.setAttribute('class',"home");
+        Nick.inneHTML = 'Nick is home';
+    } else {
         Nick.setAttribute('class',"away");
+        Nick.inneHTML = 'Nick is not home';
     }
-
-
-    Russell.innerHTML = Roos_is_home;
-    Steve.innerHTML=Steve_is_home;
-    Nick.innerHTML=Nick_is_home;
 
     // setTimeout(request_scan, 30000);
 }
 
 function request_scan() {
-    socket.emit('request_scan');
-    // var request = new XMLHttpRequest();
-    // request.open('GET', '/scan', true);
+    //socket.emit('request_scan');
+    var request = new XMLHttpRequest();
+    request.open('GET', '/scan', true);
 
-    // request.onload = function() {
-    //     if (this.status >= 200 && this.status < 400) {
-    //         // Success!
-    //         var data = JSON.parse(this.response);
-    //         console.log(data);
-    //         updateDOM(data);
+    request.onload = function() {
+        if (this.status >= 200 && this.status < 400) {
+            // Success!
+            var data = JSON.parse(this.response);
+            console.log(data);
+            updateDOM(data);
 
-    //     } else {
-    //         // We reached our target server, but it returned an error
-    //         show_error();
-    //     }
-    // };
+        } else {
+            // We reached our target server, but it returned an error
+            show_error('Error', 'The server returned an error!');
+        }
+    };
 
-    // request.onerror = function() {
-    //     // There was a connection error of some sort
-    //     show_error();
-    // };
+    request.onerror = function() {
+        // There was a connection error of some sort
+        show_error('Error', 'Could not connect to the server');
+    };
 
-    // request.send();
+    request.send();
 }
 
 // Error things
