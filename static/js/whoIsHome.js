@@ -29,9 +29,9 @@ socket.on('error', function() {
 function updateDOM(json) {
     hide_error();
     console.log(json);
-    var Roos_is_home=(json[0]);
-    var Steve_is_home=(json[0]);
-    var Nick_is_home=(json[0]);
+    var Roos_is_home=(json[0].Roos);
+    var Steve_is_home=(json[0].Steve);
+    var Nick_is_home=(json[0].Nick);
 
     var Russell = document.getElementById("russell-home");
     var Steve = document.getElementById("steve-home");
