@@ -29,39 +29,39 @@ socket.on('error', function() {
 function updateDOM(json) {
     hide_error();
     console.log(json);
-    var Roos_is_home=(true);
-    var Steve_is_home=(true);
-    var Nick_is_home=(false);
+    var Roos_is_home=(json[0].Roos);
+    var Steve_is_home=(json[1].Steve);
+    var Nick_is_home=(json[2].Nick);
 
     var Russell = document.getElementById("russell-home");
     var Steve = document.getElementById("steve-home");
     var Nick = document.getElementById("nick-home");
 
-    if (Roos_is_home)
+    if (Roos_is_home == 'True')
     {
         Russell.setAttribute('class',"home");
-        Russell.inneHTML = 'Roos is home';
+        Russell.innerHTML = 'Roos is home';
     } else {
         Russell.setAttribute('class',"away");
-        Russell.inneHTML = 'Roos is not home';
+        Russell.innerHTML = 'Roos is not home';
     }
 
-    if (Steve_is_home)
+    if (Steve_is_home == 'True')
     {
         Steve.setAttribute('class',"home");
-        Steve.inneHTML = 'Steve is home';
+        Steve.innerHTML = 'Steve is home';
     } else {
         Steve.setAttribute('class',"away");
-        Steve.inneHTML = 'Steve is not home';
+        Steve.innerHTML = 'Steve is not home';
     }
 
-    if (Nick_is_home)
+    if (Nick_is_home == 'True')
     {
         Nick.setAttribute('class',"home");
-        Nick.inneHTML = 'Nick is home';
+        Nick.innerHTML = 'Nick is home';
     } else {
         Nick.setAttribute('class',"away");
-        Nick.inneHTML = 'Nick is not home';
+        Nick.innerHTML = 'Nick is not home';
     }
 
     // setTimeout(request_scan, 30000);
