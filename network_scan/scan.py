@@ -74,7 +74,7 @@ class findRoommates():
         # return roommates
 
     def show_who_is_home(self):
-        self.who_is_home = {
+        self.who_is_home = [{
             "Roos": self.Roos,
         }, {
             "Steve": self.Steve,
@@ -82,16 +82,16 @@ class findRoommates():
             "Nick": self.Nick,
         }, {
             "Grace": self.Grace,
-        }
+        }]
         # names = json.dumps(self.who_is_home)
 
         # return names
 
     def is_there_event_and_scan(self):
         self.scan_and_counter()
-        print(json.dumps(self.who_is_home))
+        # print(json.dumps(self.who_is_home))
 
-        l = {
+        l = [{
             "Roos": self.Roos,
         }, {
             "Steve": self.Steve,
@@ -99,7 +99,7 @@ class findRoommates():
             "Nick": self.Nick,
         }, {
             "Grace": self.Grace,
-        }
+        }]
 
         if (self.who_is_home == l):
             return False
