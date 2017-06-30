@@ -27,8 +27,7 @@ def roommates():
 
 
 @app.route('/scan', methods=['GET'])
-def ping_who_is_here():
-    all_info.scan_and_counter()
+def ping_who_is_here():   
     return all_info.show_who_is_home()
 
 
@@ -38,7 +37,7 @@ def push_event():
         socketio.emit('house_occupants_updated', all_info.who_is_home)
 
     print(all_info.who_is_home)
-    threading.Timer(30, push_event).start()
+    threading.Timer(5, push_event).start()
 
 
 push_event()

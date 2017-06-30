@@ -83,9 +83,9 @@ class findRoommates():
         }, {
             "Grace": self.Grace,
         }]
-        # names = json.dumps(self.who_is_home)
+        names = json.dumps(self.who_is_home)
 
-        # return names
+        return names
 
     def is_there_event_and_scan(self):
         self.scan_and_counter()
