@@ -2,7 +2,8 @@ import subprocess
 import json
 import os
 
-
+roos_mac_for_android = "FC:DB:B3:3E:9D:F8"
+roos_mac_for_iphone =  "e8:8d:28:c5:65:19"
 class findRoommates():
 
     def __init__(self):
@@ -26,7 +27,7 @@ class findRoommates():
             shell=True)
         counter_celing = 9
 
-        if 'e8:8d:28:c5:65:19' in open('allout.txt').read():
+        if 'FC:DB:B3:3E:9D:F8' in open('allout.txt').read():
             if self.roos_counter < counter_celing:
                 self.roos_counter += counter_celing
                 self.Roos = "True"
