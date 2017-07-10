@@ -29,15 +29,15 @@ socket.on('error', function() {
 function updateDOM(json) {
     hide_error();
     console.log(json);
-    var Roos_is_home=(json[0].Roos);
-    var Steve_is_home=(json[1].Steve);
-    var Nick_is_home=(json[2].Nick);
+    var Roos_is_home=(json.roomates[0].home);
+    var Steve_is_home=(json.roomates[1].home);
+    var Nick_is_home=(json.roomates[2].home);
 
     var Russell = document.getElementById("russell-home");
     var Steve = document.getElementById("steve-home");
     var Nick = document.getElementById("nick-home");
 
-    if (Roos_is_home == 'True')
+    if (Roos_is_home == true)
     {
         Russell.setAttribute('class',"home");
         Russell.innerHTML = 'Roos is home';
@@ -46,7 +46,7 @@ function updateDOM(json) {
         Russell.innerHTML = 'Roos is not home';
     }
 
-    if (Steve_is_home == 'True')
+    if (Steve_is_home == true)
     {
         Steve.setAttribute('class',"home");
         Steve.innerHTML = 'Steve is home';
@@ -55,7 +55,7 @@ function updateDOM(json) {
         Steve.innerHTML = 'Steve is not home';
     }
 
-    if (Nick_is_home == 'True')
+    if (Nick_is_home == true)
     {
         Nick.setAttribute('class',"home");
         Nick.innerHTML = 'Nick is home';

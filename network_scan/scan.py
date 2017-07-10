@@ -2,16 +2,18 @@ import subprocess
 import json
 import os
 
-roos_mac_for_android = "FC:DB:B3:3E:9D:F8" #make lowercase
-roos_mac_for_iphone =  "e8:8d:28:c5:65:19"
+roos_mac_for_android = "FC:DB:B3:3E:9D:F8"  # make lowercase
+roos_mac_for_iphone = "e8:8d:28:c5:65:19"
+
+
 class findRoommates():
 
     def __init__(self):
         print("created findRoommates object")
-        self.Roos = "False"
-        self.Grace = "False"
-        self.Steve = "False"
-        self.Nick = "False"
+        self.Roos = False
+        self.Grace = False
+        self.Steve = False
+        self.Nick = False
 
         self.roos_counter = 0
         self.steve_counter = 0
@@ -30,7 +32,7 @@ class findRoommates():
         if 'fc:db:b3:3e:9d:f8' in open('allout.txt').read():
             if self.roos_counter < counter_celing:
                 self.roos_counter += counter_celing
-                self.Roos = "True"
+                self.Roos = True
         else:
             if self.roos_counter > 0:
                 self.roos_counter -= 1
@@ -38,7 +40,7 @@ class findRoommates():
         if 'ac:cf:85:12:42:1d' in open('allout.txt').read():
             if self.steve_counter < counter_celing:
                 self.steve_counter += counter_celing
-                self.Steve = "True"
+                self.Steve = True
         else:
             if self.steve_counter > 0:
                 self.steve_counter -= 1
@@ -46,17 +48,17 @@ class findRoommates():
         if '6c:72:e7:cf:64:67' in open('allout.txt').read():
             if self.nick_counter < counter_celing:
                 self.nick_counter += counter_celing
-                self.Nick = "True"
+                self.Nick = True
         else:
             if self.nick_counter > 0:
                 self.nick_counter -= 1
 
         if self.nick_counter == 0:
-            self.Nick = "False"
+            self.Nick = False
         if self.roos_counter == 0:
-            self.Roos = "False"
+            self.Roos = False
         if self.steve_counter == 0:
-            self.Steve = "False"
+            self.Steve = False
         return "DONE"
 
         # 8:31:c1:c5:a9:b0 nicks laptop
@@ -75,15 +77,21 @@ class findRoommates():
         # return roommates
 
     def show_who_is_home(self):
-        self.who_is_home = [{
-            "Roos": self.Roos,
-        }, {
-            "Steve": self.Steve,
-        }, {
-            "Nick": self.Nick,
-        }, {
-            "Grace": self.Grace,
-        }]
+
+        self.who_is_home = {'roomates': [{'name': 'Roos', 'home': self.Roos},
+                                         {'name': 'Steve', 'home': self.Steve},
+                                         {'name': 'Nick', 'home': self.Nick}
+                                         ]}
+
+        # [{
+        #     "Roos": self.Roos,
+        # }, {
+        #     "Steve": self.Steve,
+        # }, {
+        #     "Nick": self.Nick,
+        # }, {
+        #     "Grace": self.Grace,
+        # }]
         names = json.dumps(self.who_is_home)
 
         return names
@@ -92,15 +100,10 @@ class findRoommates():
         self.scan_and_counter()
         # print(json.dumps(self.who_is_home))
 
-        l = [{
-            "Roos": self.Roos,
-        }, {
-            "Steve": self.Steve,
-        }, {
-            "Nick": self.Nick,
-        }, {
-            "Grace": self.Grace,
-        }]
+        l = {'roomates': [{'name': 'Roos', 'home': self.Roos},
+                          {'name': 'Steve', 'home': self.Steve},
+                          {'name': 'Nick', 'home': self.Nick}
+                          ]}
 
         if (self.who_is_home == l):
             return False
