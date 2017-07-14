@@ -12,6 +12,7 @@
     <script src="https://use.fontawesome.com/cafb61558f.js"></script>
 
     <title>DeepHire House</title>
+
 </head>
 
 <body onload="request_scan()">
@@ -47,18 +48,32 @@
         <div id="holiday" class="info-card">
             <div class="info-card-content">
                 <h2 id="holiday-month"></h2>
+
                 <h3 id="holiday-date"></h3>
                 <h4 id="holiday-title"></h4>
+
             </div>
         </div>
+
+         <!-- Docs at http://http://simpleweatherjs.com -->
+<!-- Docs at http://http://simpleweatherjs.com -->
+<div id="weather"></div>
+<button class="js-geolocation" style="display: none;">Use Your Location</button>
+<button onclick="location.href='https://hangouts.google.com/hangouts/_/gi4at2dfgfakvdbnltarkgntmqe'" type="button">
+     Join our google Hangout!</button>
     </main>
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://chriszarate.github.io/sheetrock/dist/sheetrock.min.js"></script>
-    <script src="../static/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>    <script src="../static/js/main.js"></script>
     <script src="../static/js/whoIsHome.js"></script>
     <script src="../static/js/shoppingList.js"></script>
-
+    <script src="../static/js/getWeather.js"></script>
 </body>
+
+     
+
 
 </html>
