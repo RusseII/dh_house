@@ -1,8 +1,3 @@
-Interface: en0, datalink type: EN10MB (Ethernet)
-Starting arp-scan 1.9 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-192.168.86.1	f4:f2:6d:d9:73:cb	(Unknown)
-192.168.86.44	ac:37:43:49:00:80	(Unknown)
-192.168.86.45	fc:db:b3:3e:9d:f8	(Unknown)
-
-516 packets received by filter, 0 packets dropped by kernel
-Ending arp-scan 1.9: 256 hosts scanned in 1.862 seconds (137.49 hosts/sec). 3 responded
+Password:Sorry, try again.
+Password:
+sudo: 1 incorrect password attempt
